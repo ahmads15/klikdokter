@@ -1,6 +1,6 @@
 Feature: Login Page
 
-Background: Open Web browser taniHub.com
+Background: Open Web browser klikDokter.com
 
 Scenario: [Positive Case] Success Login
 Given a web browser is KlikDokter Login page
