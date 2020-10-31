@@ -12,6 +12,8 @@ const elements = {
   klikVerifNanti: "//button[@class='verification-reminder-content__button verification-reminder-content__button--plain']",
   klikLanjutkan:"//a[.='Lanjutkan']",
   namaUser: "//h2[@class='main-menu__title']",
+  closePopUp: ".promote-install__close",
+  refresh: '.update-modal__refresh',
 };
 
 export const goToWebsite = async () => {
@@ -30,6 +32,7 @@ export const inputEmail = async () => {
   client.useXpath();
   await base.setValueElement(elements.fieldEmail, 'ahmadsutarji15@gmail.com');
   client.useCss();
+  await base.clickElement(elements.closePopUp);
   await base.clickElementViaXpath(elements.btnLanjut);
 };
 
@@ -37,19 +40,19 @@ export const clickBtnSelanjutnya = async () => {
   await base.clickElement(elements.btnSelanjutnya);
 };
 
-
 export const inputPassword = async () => {
-    await base.waitElementVisible(elements.labelPassword);
+    client.useXpath();
     await base.setValueElement(elements.labelPassword, 'AHMAD123');
-    await base.clickElementViaXpath(elements.klikSubmit);
+    await base.clickElement(elements.klikSubmit);
+    client.useCss();
   };
 
   export const clickVerifNanti = async () => {
-    await base.clickElementViaXpath(elements.klikVerifNanti);
-    await base.clickElementViaXpath(elements.klikLanjutkan);
+    await base.clickElement(elements.refresh);
+    client.useXpath();
+    await base.setValueElement(elements.fieldEmail, 'ahmadsutarji15@gmail.com');
+    client.useCss();
   };
-
-
 
 export const verifySuccesLogin = async () => {
   await client.useXpath();
