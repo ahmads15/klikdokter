@@ -37,11 +37,6 @@ export const clickBtnSelanjutnya = async () => {
   await base.clickElement(elements.btnSelanjutnya);
 };
 
-export const inputInvalidPassword = async () => {
-  await base.waitElementVisible(elements.lebelPassword);
-  await base.setValueElement(elements.fieldPassword, 'asdasd123');
-  await base.clickElement(elements.btnMasuk);
-};
 
 export const inputPassword = async () => {
     await base.waitElementVisible(elements.labelPassword);
@@ -55,9 +50,6 @@ export const inputPassword = async () => {
   };
 
 
-export const wordingInvalidPassword = async () => {
-  await base.expectElementEqualText(elements.wordingInvalidPassword, 'Password yang Anda masukkan salah.');
-};
 
 export const verifySuccesLogin = async () => {
   await client.useXpath();
